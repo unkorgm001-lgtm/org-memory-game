@@ -1,0 +1,50 @@
+@media (min-width: 1025px) {
+  .get-name-popup {
+  }
+  /* .get-name-popup: before;
+  /* .get-mode-popup:before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: -40px;
+    transform: translateY(-50%);
+    border-width: 20px;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+  }
+  .get-mode-popup:before {
+    border-color: transparent transparent transparent white;
+    left: 100%;
+    bottom: 40%;
+  } */
+}
+@media (max-width: 1024px) {
+  .info-container {
+    width: 750px;
+  }
+  .memory-game-blocks {
+    width: 750px;
+  }
+}
+@media (max-width: 480px) {
+  .info-container {
+    width: 360px;
+  }
+  .memory-game-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 360px;
+  }
+  .memory-game-blocks .game-block {
+    height: 150px;
+    aspect-ratio: 1;
+  }
+  .memory-game-blocks .game-block .face {
+    font-size: 100px;
+  }
+}
+@media (max-width: 350px) {
+  .info-container {
+    width: 300px;
+  }
+}

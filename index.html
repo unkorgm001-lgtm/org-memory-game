@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/reponsive.css" />
+  </head>
+  <body>
+    <div class="control-btns">
+      <div class="control-btns-container">
+        <span class="start-game">Start Game</span>
+        <span class="change-game-mode">Change Mode</span>
+      </div>
+    </div>
+    <div class="game-popups">
+      <div class="get-name-popup popup">
+        <h2>Welcome</h2>
+        <input
+          type="text"
+          id="userName"
+          placeholder="Enter Your Awesome Name...  :)"
+        />
+        <div class="actions">
+          <button class="save" id="save-name">Play</button>
+          <button class="rest" id="rest-name">Rename</button>
+        </div>
+      </div>
+      <!-- <div class="get-mode-popup popup">
+        <div>Option</div>
+        <div>Option</div>
+        <div>Option</div>
+        <div>Option</div>
+        <div>Option</div>
+      </div> -->
+    </div>
+
+    <div class="info-container">
+      <div class="name">Hello: <span></span></div>
+      <div class="tries">Wrong Tries: <span>0</span></div>
+    </div>
+    <div class="memory-game-blocks">
+      <div class="game-block" data-technology="a-letter">
+        <div class="face front"></div>
+        <div class="face back">A</div>
+      </div>
+      <div class="game-block" data-technology="a-letter">
+        <div class="face front"></div>
+        <div class="face back">A</div>
+      </div>
+      <div class="game-block" data-technology="b-letter">
+        <div class="face front"></div>
+        <div class="face back">B</div>
+      </div>
+      <div class="game-block" data-technology="b-letter">
+        <div class="face front"></div>
+        <div class="face back">B</div>
+      </div>
+      <div class="game-block" data-technology="c-letter">
+        <div class="face front"></div>
+        <div class="face back">C</div>
+      </div>
+      <div class="game-block" data-technology="c-letter">
+        <div class="face front"></div>
+        <div class="face back">C</div>
+      </div>
+      <div class="game-block" data-technology="d-letter">
+        <div class="face front"></div>
+        <div class="face back">D</div>
+      </div>
+      <div class="game-block" data-technology="d-letter">
+        <div class="face front"></div>
+        <div class="face back">D</div>
+      </div>
+      <div class="game-block" data-technology="e-letter">
+        <div class="face front"></div>
+        <div class="face back">E</div>
+      </div>
+      <div class="game-block" data-technology="e-letter">
+        <div class="face front"></div>
+        <div class="face back">E</div>
+      </div>
+      <div class="game-block" data-technology="f-letter">
+        <div class="face front"></div>
+        <div class="face back">F</div>
+      </div>
+      <div class="game-block" data-technology="f-letter">
+        <div class="face front"></div>
+        <div class="face back">F</div>
+      </div>
+      <div class="game-block" data-technology="g-letter">
+        <div class="face front"></div>
+        <div class="face back">G</div>
+      </div>
+      <div class="game-block" data-technology="g-letter">
+        <div class="face front"></div>
+        <div class="face back">G</div>
+      </div>
+      <div class="game-block" data-technology="h-letter">
+        <div class="face front"></div>
+        <div class="face back">H</div>
+      </div>
+      <div class="game-block" data-technology="h-letter">
+        <div class="face front"></div>
+        <div class="face back">H</div>
+      </div>
+      <div class="game-block" data-technology="i-letter">
+        <div class="face front"></div>
+        <div class="face back">I</div>
+      </div>
+      <div class="game-block" data-technology="i-letter">
+        <div class="face front"></div>
+        <div class="face back">I</div>
+      </div>
+      <div class="game-block" data-technology="j-letter">
+        <div class="face front"></div>
+        <div class="face back">J</div>
+      </div>
+      <div class="game-block" data-technology="j-letter">
+        <div class="face front"></div>
+        <div class="face back">J</div>
+      </div>
+    </div>
+    <audio src="sounds/sec.mp3" id="success-audio" preload="auto"></audio>
+    <audio src="sounds/main-f.mp3" id="fail-audio" preload="auto"></audio>
+    <script src="js/main.js"></script>
+  </body>
+</html>
