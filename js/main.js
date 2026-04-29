@@ -107,7 +107,7 @@ let blocks = Array.from(blocksContainer.children);
 let rightParis = 0;
 // let orderRange = [...Array(blocks.length).keys()];
 let orderRange = Array.from(Array(blocks.length).keys());
-// shuffle(orderRange);
+shuffle(orderRange);
 // Add Order Property To Game Block
 blocks.forEach((block, i) => {
   block.style.order = orderRange[i];
