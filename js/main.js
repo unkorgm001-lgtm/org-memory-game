@@ -104,7 +104,7 @@ let durationS = 300;
 let duration = 500;
 let blocksContainer = document.querySelector(".memory-game-blocks");
 let blocks = Array.from(blocksContainer.children);
-let rightParis = 15;
+let rightParis = 0;
 // let orderRange = [...Array(blocks.length).keys()];
 let orderRange = Array.from(Array(blocks.length).keys());
 // shuffle(orderRange);
