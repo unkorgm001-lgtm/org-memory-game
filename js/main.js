@@ -155,8 +155,9 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
     secondBlock.classList.remove("flipped");
     firstBlock.classList.add("matched");
     secondBlock.classList.add("matched");
-
-    if (rightParis === 15) {
+    console.log(rightParis);
+    rightParis++;
+    if (rightParis === 10) {
       let msgEndGameParent = document.createElement("div");
       msgEndGameParent.classList.add("splash-screen");
       msgEndGameParent.style.cssText = `
@@ -212,7 +213,7 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
           endOrContinueGame();
         }
       });
-    } else rightParis++;
+    }
     console.log(rightParis);
   } else {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
@@ -223,22 +224,22 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
   }
 }
 // Shuffle Function
-// function shuffle(array) {
-//   // Setting Vars
-//   let current = array.length,
-//     temp,
-//     random;
-//   while (current > 0) {
-//     // Get Random Number
-//     random = Math.floor(Math.random() * current);
-//     // Decrease Length One
-//     current--;
-//     temp = array[current];
-//     array[current] = array[random];
-//     array[random] = temp;
-//   }
-//   return array;
-// }
+function shuffle(array) {
+  //   // Setting Vars
+  //   let current = array.length,
+  //     temp,
+  //     random;
+  //   while (current > 0) {
+  //     // Get Random Number
+  //     random = Math.floor(Math.random() * current);
+  //     // Decrease Length One
+  //     current--;
+  //     temp = array[current];
+  //     array[current] = array[random];
+  //     array[random] = temp;
+  //   }
+  //   return array;
+}
 
 // End OR Continue
 function endOrContinueGame() {
