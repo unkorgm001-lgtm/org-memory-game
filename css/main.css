@@ -1,5 +1,5 @@
 :root {
-  --m-t: 1s;
+  --m-t: 0.5s;
 }
 * {
   box-sizing: border-box;
@@ -8,17 +8,24 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-.control-btns {
+.splash-screen {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 12;
+  z-index: 10;
   background: rgba(3, 169, 244, 0.7);
   backdrop-filter: blur(5px);
   transition: opacity var(--m-t);
   animation: fade 3s infinite linear backwards;
+}
+.splash-screen h1 {
+  font-weight: bold;
+  font-size: clamp(24px, 8vw, 8rem);
+  text-align: center;
+  color: white;
+  transition: opacity var(--m-t);
 }
 .control-btns-container,
 .game-popups {
@@ -30,6 +37,9 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+.control-btns-container {
+  z-index: 40;
+}
 .control-btns span {
   color: white;
   background-color: #f44336;
@@ -40,6 +50,27 @@ body {
   cursor: pointer;
   width: 100%;
   min-width: max-content;
+  transition: var(--m-t);
+}
+.control-btns-container > span {
+  position: relative;
+}
+.control-btns-container > span::before,
+.control-btns-container > span::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 4px;
+  height: 50%;
+  border-radius: 1px;
+  background-color: white;
+}
+.control-btns-container > span::before {
+  left: -10px;
+}
+.control-btns-container > span::after {
+  right: -10px;
 }
 @keyframes fade {
   0% {
@@ -55,28 +86,51 @@ body {
     backdrop-filter: blur(5px);
   }
 }
-.game-popups {
-  z-index: 11;
-  position: fixed;
-  perspective: 500px;
-  width: 100%;
+.start-game-popup-container {
+  position: relative;
+}
+.popups {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
   height: 100%;
-  flex-direction: row;
-  justify-content: center;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.game-popups .popup {
+.popup {
   background: #2196f3;
-  padding: 20px;
+  padding: 40px 20px;
   border-radius: 10px;
   min-width: 300px;
   max-width: 500px;
   width: 100%;
   height: fit-content;
-  transform: translateZ(-500px) rotateX(180deg);
   opacity: 0;
   transition: var(--m-t);
   position: relative;
+}
+.popup h2 {
+  margin-top: -20px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+.close-popup {
+  padding: 10px;
+  border-radius: 50%;
+}
+/* Start Popup */
+.get-name-popup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 60px 20px;
+  gap: 10px;
+  transform: translateZ(-500px) rotateX(90deg);
 }
 .get-name-popup input {
   border: none;
@@ -90,19 +144,17 @@ body {
 }
 .get-name-popup input::placeholder {
   color: #fff;
-}
-.get-name-popup h2 {
-  margin-top: 0;
-  color: white;
   font-weight: bold;
+  font-size: 17px;
 }
-.get-name-popup .actions {
+.actions {
+  width: 100%;
   margin-top: 30px;
   display: flex;
   gap: 10px;
 }
-.get-name-popup .actions .save,
-.get-name-popup .actions .rest {
+.actions :first-child,
+.actions :last-child {
   padding: 10px;
   border: 3px solid white;
   background-color: transparent;
@@ -111,11 +163,82 @@ body {
   font-weight: bold;
   border-radius: 6px;
 }
-.get-name-popup .actions .save {
+.actions :first-child {
   flex: 1;
 }
-.get-name-popup .actions .rest {
+.actions :last-child {
   width: fit-content;
+}
+.wrong-value,
+.actions.wrong-value button {
+  border-color: #db1a1a;
+  animation: border-fade-color 1s infinite linear;
+}
+h2.wrong-value,
+input.wrong-value::placeholder,
+.actions.wrong-value button {
+  color: #db1a1a;
+}
+@keyframes border-fade-color {
+  0% {
+    border-color: #db1a1a;
+  }
+  50% {
+    border-color: rgba(255, 0, 0, 0.561);
+  }
+  100% {
+    border-color: #db1a1a;
+  }
+}
+/* songs Popup */
+.popups .get-song-popup {
+  height: calc(100% - 40px);
+  transform: translateZ(-500px) rotateY(90deg);
+}
+.get-song-popup .choose-song-container {
+  display: grid;
+  gap: 30px;
+}
+.get-song-popup .choose-group label {
+  display: flex;
+  justify-content: space-between;
+}
+.get-song-popup .choose-group span {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.get-song-popup .choose-group [type="radio"] {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: relative;
+  perspective: 50px;
+}
+.get-song-popup .choose-group [type="radio"]::before,
+.get-song-popup .choose-group [type="radio"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.get-song-popup .choose-group [type="radio"]::before {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 3px solid #0921bf;
+}
+.get-song-popup .choose-group [type="radio"]::after {
+  width: 17px;
+  height: 17px;
+  transition: var(--m-t);
+  transform: translate(-50%, -50%) translateZ(-50px);
+}
+.get-song-popup .choose-group [type="radio"]:checked::after {
+  transform: translate(-50%, -50%) translateZ(1px);
+  background-color: blue;
 }
 .info-container {
   width: 1080px;
@@ -146,7 +269,7 @@ body {
 }
 .memory-game-blocks .game-block {
   height: 200px;
-  transition: transform 0.5s;
+  transition: transform var(--m-t);
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;

@@ -8,34 +8,79 @@
     <link rel="stylesheet" href="css/reponsive.css" />
   </head>
   <body>
-    <div class="control-btns">
-      <div class="control-btns-container">
-        <span class="start-game">Start Game</span>
-        <span class="change-game-mode">Change Mode</span>
-      </div>
-    </div>
-    <div class="game-popups">
-      <div class="get-name-popup popup">
-        <h2>Welcome</h2>
-        <input
-          type="text"
-          id="userName"
-          placeholder="Enter Your Awesome Name...  :)"
-        />
-        <div class="actions">
-          <button class="save" id="save-name">Play</button>
-          <button class="rest" id="rest-name">Rename</button>
+    <div class="splash-screen">
+      <h1>Welcome</h1>
+      <div class="control-btns">
+        <div class="control-btns-container">
+          <span class="start-game">Start Game</span>
+          <span class="change-game-song">Change Song</span>
         </div>
       </div>
-      <!-- <div class="get-mode-popup popup">
-        <div>Option</div>
-        <div>Option</div>
-        <div>Option</div>
-        <div>Option</div>
-        <div>Option</div>
-      </div> -->
+      <div class="popups">
+        <div class="get-name-popup popup">
+          <h2>Welcome</h2>
+          <input
+            type="text"
+            id="userName"
+            placeholder="Enter Your Awesome Name...  :)"
+          />
+          <div class="actions">
+            <button class="save" id="save-name">Play</button>
+            <button class="rest" id="rest-name">Rename</button>
+          </div>
+        </div>
+        <div class="get-song-popup popup">
+          <h2>Choose Background Music</h2>
+          <div class="choose-song-container">
+            <div class="choose-group">
+              <label for="song-1"
+                ><span class="text-info">Song 1</span>
+                <input
+                  type="radio"
+                  id="song-1"
+                  name="choose-song"
+                  date-song="audio-1"
+                  checked
+              /></label>
+            </div>
+            <div class="choose-group">
+              <label for="song-2"
+                ><span class="text-info">Song 2</span>
+                <input
+                  type="radio"
+                  id="song-2"
+                  name="choose-song"
+                  date-song="audio-2"
+              /></label>
+            </div>
+            <div class="choose-group">
+              <label for="song-3"
+                ><span class="text-info">Song 3</span>
+                <input
+                  type="radio"
+                  id="song-3"
+                  name="choose-song"
+                  date-song="audio-3"
+              /></label>
+            </div>
+            <div class="choose-group">
+              <label for="song-mm"
+                ><span class="text-info">Special Song</span>
+                <input
+                  type="radio"
+                  id="song-mm"
+                  name="choose-song"
+                  date-song="audio-mm"
+              /></label>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="apply-setting">Save Settings</button>
+            <button class="rest-setting">Rest</button>
+          </div>
+        </div>
+      </div>
     </div>
-
     <div class="info-container">
       <div class="name">Hello: <span></span></div>
       <div class="tries">Wrong Tries: <span>0</span></div>
@@ -122,6 +167,11 @@
         <div class="face back">J</div>
       </div>
     </div>
+    <audio src="sounds/bg-m-1.mp3" id="audio-1" preload="auto"></audio
+    ><audio src="sounds/bg-m-2.mp3" id="audio-2" preload="auto"></audio
+    ><audio src="sounds/bg-m-3.mp3" id="audio-3" preload="auto"></audio
+    ><audio src="sounds/bg-mm.mp3" id="audio-mm" preload="auto"></audio>
+
     <audio src="sounds/sec.mp3" id="success-audio" preload="auto"></audio>
     <audio src="sounds/main-f.mp3" id="fail-audio" preload="auto"></audio>
     <script src="js/main.js"></script>

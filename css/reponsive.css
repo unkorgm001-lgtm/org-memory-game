@@ -1,24 +1,17 @@
-@media (min-width: 1025px) {
-  .get-name-popup {
-  }
-  /* .get-name-popup: before;
-  /* .get-mode-popup:before {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    left: -40px;
-    transform: translateY(-50%);
-    border-width: 20px;
-    border-color: transparent white transparent transparent;
-    border-style: solid;
-  }
-  .get-mode-popup:before {
-    border-color: transparent transparent transparent white;
-    left: 100%;
-    bottom: 40%;
-  } */
-}
 @media (max-width: 1024px) {
+  .control-btns-container {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+  }
+  .popups {
+    flex-direction: column;
+    height: calc(100% - 100px);
+    top: 50px;
+  }
+  .popups .get-mode-popup {
+    flex: 1;
+  }
   .info-container {
     width: 750px;
   }
