@@ -39,6 +39,7 @@ radios.forEach((e) => {
 startGameButton.onclick = function () {
   gameNameAnimationIn();
   userNameInput.focus();
+  document.querySelector(".popups").style.zIndex = "41";
   // When Press On Start Button
   document.querySelector(".splash-screen h1").style.opacity = "0";
   // When Press On Save Button
@@ -46,6 +47,7 @@ startGameButton.onclick = function () {
     let userName = userNameInput.value;
     if (userName === "" || userName === null) userNameError();
     else {
+      document.querySelector(".popups").style.zIndex = "-1";
       nameSpan.innerHTML = userName;
       gameNameAnimationOut();
       gameModeAnimationOut();
@@ -227,8 +229,8 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 function shuffle(array) {
   // Setting Vars
   let current = array.length,
-  temp,
-  random;
+    temp,
+    random;
   while (current > 0) {
     // Get Random Number
     random = Math.floor(Math.random() * current);
@@ -237,7 +239,7 @@ function shuffle(array) {
     temp = array[current];
     array[current] = array[random];
     array[random] = temp;
-   }
+  }
   return array;
 }
 
