@@ -225,20 +225,21 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 }
 // Shuffle Function
 function shuffle(array) {
-  //   // Setting Vars
-  //   let current = array.length,
-  //     temp,
-  //     random;
-  //   while (current > 0) {
-  //     // Get Random Number
-  //     random = Math.floor(Math.random() * current);
-  //     // Decrease Length One
-  //     current--;
-  //     temp = array[current];
-  //     array[current] = array[random];
-  //     array[random] = temp;
-  //   }
-  //   return array;
+     // Setting Vars
+  let current = array.length,
+  
+temp,
+      random;
+    while (current > 0) {
+     // Get Random Number
+       random = Math.floor(Math.random() * current);
+      // Decrease Length One
+     current--;
+  temp = array[current];
+       array[current] = array[random];
+       array[random] = temp;
+   }
+  return array;
 }
 
 // End OR Continue
